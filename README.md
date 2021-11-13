@@ -6,11 +6,12 @@ My final project for Consensys Developer Bootcamp
 --- 
 
 The purpose of this project is the creation of a DID for identification, authentication, signature and data flow traceability for DaSES.
-The decentralized identity will be used to store and share authenticated data and proofs and will integrate Verifiable Credentials (VC).
+The decentralized identity will be used to store and share authenticated data, consents, data sharing agreements and proofs by using Verifiable Credentials (VC).
 
 DaSES will be a space for exchange and decentralized storage about data education and skills from a multi-party ecosystem.
 
 This DID will allow governance and data flow into the space using [GAIA-X ecosystem] (https://www.gaia-x.eu/)
+This project is using SSI Kit provided by walt.id
 
 1. Why do we want to set up this community?
 2. The description must be fairly short, simple and an iterative process, to produce a living document, contributed to and edited over time as it evolves.
