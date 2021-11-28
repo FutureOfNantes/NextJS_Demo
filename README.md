@@ -13,6 +13,15 @@ DaSES will be a space for exchange and decentralized storage about data educatio
 This DID will allow governance and data flow into the space using [GAIA-X ecosystem] (https://www.gaia-x.eu/)
 This project is using SSI Kit provided by walt.id
 
+### How to run this project locally:
+
+##### Prerequisites
+
+##### Contracts
+
+##### Frontend
+
+
 1. Why do we want to set up this community?
 2. The description must be fairly short, simple and an iterative process, to produce a living document, contributed to and edited over time as it evolves.
 3. State:

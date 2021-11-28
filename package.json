@@ -1,0 +1,13 @@
+{
+  "name": "didfordases",
+  "version": "1.0.0",
+  "description": "Decentralized Identity (DID) for Data Space Education and Skills (DaSES)",
+  "main": "index.js",
+  "repository": "https://github.com/pgrandne/blockchain-developer-bootcamp-final-project",
+  "author": "pgrandne",
+  "license": "MIT",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "dotenv": "^10.0.0"
+  }
+}
