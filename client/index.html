@@ -9,23 +9,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <title>DidForDases</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
+<!-- List of DASES entities loaded with the webpage : function listOfEntities()-->
+
+<body onload="listOfEntities()">
+
     <div class="container-fluid p-5 bg-primary text-white text-center">
         <h1>Decentralized Identity (DID) for Data Space Education and Skills (DaSES)</h1>
-
-        <p>DaSES will be a space for exchange about data education and skills from a multi-party ecosystem</p>
+        <p>The aim of this basic MVP is to associate address with entity identities for a simple data exchange </p>
     </div>
+    <!-- Main page -->
     <div class="container mt-5">
         <div class="row">
+            <!-- Display of entities who participate to Dases -->
             <div class="col-sm-8">
-                <h3>List of Identity associated to Public keys </h3>
-                <button type="button" class="btn btn-secondary" id="test">Test</button>
-                <table class="table table-striped" id="fetch">
+                <h3>List of Identities associated with their addresses </h3>
+                <!-- Agregation of all entities and their data in a array -->
+                <table class="table table-striped" id="entitiesTable">
                     <thead>
                         <tr>
-                            <th>Public Key</th>
+                            <th>Address</th>
                             <th>Entity Name</th>
                             <th>Contact</th>
                         </tr>
@@ -34,48 +39,49 @@
                     </tbody>
                 </table>
             </div>
+            <!-- Interaction with the smart contract for Dases onboarding Connection, Association and Update-->
             <div class="col-sm-4">
                 <h3>Interaction</h3>
-                <div id="mm-detected"></div>
-                <button type="button" class="btn btn-primary" id="mm-connect-button">Connect to
-                    Metamask</button></br></br>
-                <div id="mm-current-account"></div>
-                <button type="button" class="btn btn-primary" id="ss1-association-button">Association</button></br></br>
-                <button type="button" class="btn btn-secondary" id="ss1-update-button">Update</button>
+                <button type="button" class="btn btn-outline-success" id="mm-connect-button"></button></br></br>
+                <button type="button" class="btn btn-primary" id="pre-association-button" data-bs-toggle="modal"
+                    data-bs-target="#association">Add your entity</button></br></br>
+                <button type="button" class="btn btn-secondary" id="pre-update-button" data-bs-toggle="modal"
+                    data-bs-target="#update">Update your entity</button></br></br>
+                <button type="button" class="btn btn-danger" id="delete-button">Delete your entity</button>
             </div>
         </div>
     </div>
 
-    <!-- Association Modal -->
+    <!-- Forms to add and send information into the smart contract -->
+    <!-- Adding/Association Modal -->
     <div class="modal fade" id="association">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Association</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="container mt-3">
                         <form action="">
+                            <!-- Field for Name -->
                             <div class="mb-3 mt-3">
                                 <label for="name">Name:</label>
-                                <input type="name" class="form-control" id="ss-name" placeholder="Enter name"
+                                <input type="name" class="form-control" id="ass-name" placeholder="Enter name"
                                     name="name">
                             </div>
+                            <!-- Field for Email address -->
                             <div class="mb-3 mt-3">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="ss-email" placeholder="Enter email"
+                                <input type="email" class="form-control" id="ass-email" placeholder="Enter email"
                                     name="email">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="ss-association-button">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="association-button" data-bs-dismiss="modal">Submit</button>
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -84,27 +90,27 @@
     <div class="modal fade" id="update">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Update</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="container mt-3">
                         <form action="">
+                            <!-- Field for Name -->
                             <div class="mb-3 mt-3">
                                 <label for="name">Name:</label>
-                                <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+                                <input type="name" class="form-control" id="upd-name" placeholder="Enter name" name="name">
                             </div>
+                            <!-- Field for Email Address -->
                             <div class="mb-3 mt-3">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                <input type="email" class="form-control" id="upd-email" placeholder="Enter email"
                                     name="email">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="update-button" data-bs-dismiss="modal">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -113,6 +119,11 @@
     </div>
 
     <script src="dapp.js"></script>
+
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>Created by Perrin : <a href="https://github.com/pgrandne/blockchain-developer-bootcamp-final-project/"
+                target="_blank">GitHub</a></p>
+    </div>
 </body>
 
 </html>
