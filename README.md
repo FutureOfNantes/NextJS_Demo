@@ -120,6 +120,7 @@ $ truffle test
 ```
 All tests should be passed with no error
 ##### My Ethereum Address
+0x1a2b8bd408413179524e3e61FfA1378b7b7688D5
 
 
 ##### Link for the screencast recording
