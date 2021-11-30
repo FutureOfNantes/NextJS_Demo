@@ -5,30 +5,50 @@ My final project for Consensys Developer Bootcamp is available on this link : ht
 
 --- 
 
-The purpose of this project is the creation of a DID for identification, authentication, signature and data flow traceability for DaSES.
-The decentralized identity will be used to store and share authenticated data, consents, data sharing agreements and proofs by using Verifiable Credentials (VC).
-
 DaSES will be a space for exchange and decentralized storage about data education and skills from a multi-party ecosystem.
 
-This DID will allow governance and data flow into the space using [GAIA-X ecosystem] (https://www.gaia-x.eu/)
-This project is using SSI Kit provided by walt.id
+In this ecosystem, the contracting between Data Providers and Data Users will be done on the Blockchain with smart contracts.
+These entities (Data Provider and Data Users) must be identified on the Blockchain for doing and signing this contract.
 
+This project is an example about "How to associate information with an entity and its address" as a very basic MVP. The term 'DID' is not used correctly because it is not a real DID but just an association between public key and entity name and email contact.
+It is just a small first step to apprehend how the blockchain works.
+In the long term, we plan to use https://walt.id and its SSI Kit for DID managing.
+
+### Directory Structure
+
+The purpose of this MVP is to create a first contract to store an array with one column for the public address of the entity, a second column with the name of the entity, and a thrid column with the email contact of the entity.
+
+The project is deployed on Rinkeby Test Network
 ### How to run this project locally:
+Clone the repository in a local folder and launch:
+- npm install or yarn install
 
+Launch:
+- truffle deploy 
+- truffle migrate --network development
+
+It is recommanded to use Liver Server (extension of Visual Studio Code) as a development local Server
+
+Go to repository client for launching index.html
 ##### Prerequisites
+MetaMask is requested in your browser. The Network must be localhost if you use it locally or Rinkeby if you use it on the tesnet
+Please install the latest version of Node.Js and npm or yarn
 
+Locally, we use port: 8545
+You need to create an .env file with 2 variables :
+- MNEMONIC="PUT-YOUR_SEED_PHRASE"
+- INFURA_URL=PUT_YOUR_INNFURA_RINKEBY_URL
 ##### Contracts
+The name of the main contract is DidForDases.sol and it is located in the contracts repository.
 
+This contract associates the creator as Dases Administrator (he has some specific rights on the arrray, like clear it, or transfer his ownership...)
+Each account can contact the contract by adding a name and an email address and request to be associated to them on the array : function idAssociatioh
+Then the entity can request to udapte its information (name, email address) or can request to be deleted of the list : function idUpdate, idDelete
+
+There is one function to access to the table to display it on a webpage : function getAssociatedEntitiesList
+
+One entity cannot be stored 2 times in the array, no duplication. The number of entities in this list is limited to 10 but this number can be changed.
+
+Finally, one other contract : EntitiesNumber allows to access to this variable and change it
 ##### Frontend
-
-
-1. Why do we want to set up this community?
-2. The description must be fairly short, simple and an iterative process, to produce a living document, contributed to and edited over time as it evolves.
-3. State:
- - [X] Draft - still in draft stage
- - [ ] Review - finalized and open for further community input. It can go back to the draft stage.
- - [ ] Submitted - staged to go through the proposal process. The voting period is set.
- - [ ] Pending Vote - in vote stage
- - [ ] Accepted - went through with a number of votes needed
- - [ ] Rejected - rejected. Back to the drawing boards or abandoned
- - [ ] Completed - Team has implemented the proposal
+The Front End is very basic (one index.html and one dapp.js, no React) and accessible into the client folder
