@@ -48,7 +48,7 @@ Install truffle using npm:
 ```bash
 $ npm install -g truffle
 ```
-You need to create an .env file with 2 variables :
+You need to create an .env file with 2 variables in the root directory for depoying the smart contract on the testnet:
 * MNEMONIC="PUT-YOUR_SEED_PHRASE"
 * INFURA_URL=PUT_YOUR_INNFURA_RINKEBY_URL
 
@@ -85,21 +85,23 @@ If you want to migrate the contract on the testnet, please replace development b
 It is recommanded to use Liver Server (extension of Visual Studio Code) as a development local Server
 
 Go to repository client for launching index.html
+
 You can interact with the contract
+
 If you don't have eth on the testnet : https://faucet.rinkeby.io/
 
 ##### Contracts
-The name of the main contract is DidForDases.sol and it is located in the contracts repository.
+The name of the main contract is `DidForDases.sol` and it is located in the contracts repository.
 
 This contract associates the creator as Dases Administrator (he has some specific rights on the arrray, like clear it, or transfer his ownership...)
-Each account can contact the contract by adding a name and an email address and request to be associated to them on the array : function idAssociatioh
-Then the entity can request to udapte its information (name, email address) or can request to be deleted of the list : function idUpdate, idDelete
+Each account can contact the contract by adding a name and an email address and request to be associated to them on the array : function `idAssociation`
+Then the entity can request to udapte its information (name, email address) or can request to be deleted of the list : function `idUpdate`, `idDelete`
 
-There is one function to access to the table to display it on a webpage : function getAssociatedEntitiesList
+There is one function to access to the table to display it on a webpage : function `getAssociatedEntitiesList`
 
 One entity cannot be stored 2 times in the array, no duplication. The number of entities in this list is limited to 10 but this number can be changed.
 
-Finally, one other contract : EntitiesNumber allows to access to this variable and change it
+Finally, one other contract : EntitiesNumber allows to access to this variable and change the maximum number of entities
 ##### Frontend
 The Front End is very basic (one index.html and one dapp.js, no React) and accessible into the client folder
 
