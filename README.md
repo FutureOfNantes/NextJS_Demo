@@ -111,6 +111,14 @@ The Front End is very basic (one index.html and one dapp.js, no React) and acces
 * Update yuor entity
 * Delete your entity
 
+##### Test
+* For launching tests, please open an new terminal and launch Ganache
+* Verify the port in Ganache : RPC SERVER HTTP://127.0.0.1:8545. If the port is not 8545 you have to open settings window, click on Server and change the Port number. Click on Restart
+* When Ganache is lauched on the expected port, please launch
+ ```bash
+$ truffle test
+```
+All tests should be passed with no error
 ##### My Ethereum Address
 
 
