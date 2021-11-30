@@ -1,114 +1,224 @@
 console.log("Welcome to DID for Dases App!")
 
-const ssAddress = '0xa771Cd58CdeA4149faf72B72175b9c24AeaC304C';
+const ssAddress = '0x213B8E1E95D7fc7157eDE43FfaE212a8D72985ed';
 
-const ssABI = [
+const ssABI =  [
     {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "listOfEntities",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "publicKey",
-                "type": "address"
-            },
-            {
-                "internalType": "string",
-                "name": "entityName",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "emailContact",
-                "type": "string"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
     },
     {
-        "inputs": [
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "emetteur",
+          "type": "address"
+        }
+      ],
+      "name": "Suivi",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "dasesAdmin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "listOfEntities",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "publicKey",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "entityName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "emailContact",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_entityName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_emailContact",
+          "type": "string"
+        }
+      ],
+      "name": "idAssociation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_entityName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_emailContact",
+          "type": "string"
+        }
+      ],
+      "name": "idUpdate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "idDelete",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "completeCleaning",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "replaceAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAssociatedEntitiesList",
+      "outputs": [
+        {
+          "components": [
             {
-                "internalType": "string",
-                "name": "_entityName",
-                "type": "string"
+              "internalType": "address",
+              "name": "publicKey",
+              "type": "address"
             },
             {
-                "internalType": "string",
-                "name": "_emailContact",
-                "type": "string"
-            }
-        ],
-        "name": "idAssociation",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "string",
-                "name": "_entityName",
-                "type": "string"
+              "internalType": "string",
+              "name": "entityName",
+              "type": "string"
             },
             {
-                "internalType": "string",
-                "name": "_emailContact",
-                "type": "string"
+              "internalType": "string",
+              "name": "emailContact",
+              "type": "string"
             }
-        ],
-        "name": "idUpdate",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "idDelete",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "getAssociatedEntitiesList",
-        "outputs": [
-            {
-                "components": [
-                    {
-                        "internalType": "address",
-                        "name": "publicKey",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "string",
-                        "name": "entityName",
-                        "type": "string"
-                    },
-                    {
-                        "internalType": "string",
-                        "name": "emailContact",
-                        "type": "string"
-                    }
-                ],
-                "internalType": "struct DidForDases.Entities[]",
-                "name": "",
-                "type": "tuple[]"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "internalType": "struct DidForDases.Entities[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
     }
-]
-
+  ]
 //Verification Of Metamask availability 
 window.addEventListener('load', function () {
     if (typeof window.ethereum !== 'undefined') {
@@ -168,6 +278,7 @@ ssUpdate.onclick = async () => {
     // Sending the Name and Email into the smart contract associated to the sender address for the update
     var web3 = new Web3(window.ethereum)
     const associate = new web3.eth.Contract(ssABI, ssAddress)
+
     await associate.methods.idUpdate(updateName, updateEmail).send({ from: ethereum.selectedAddress })
     //Clear the values of the form
     document.getElementById('upd-name').value = '';
@@ -203,4 +314,3 @@ async function listOfEntities() {
         }
     }
 }
-
