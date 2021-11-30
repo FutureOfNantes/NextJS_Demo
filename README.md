@@ -113,5 +113,9 @@ The Front End is very basic (one index.html and one dapp.js, no React) and acces
 
 ##### My Ethereum Address
 
+
+##### Link for the screencast recording
+https://drive.google.com/drive/folders/1a8g4u8rhoUnHhU8CyNydKDtTsuLiBkXT?usp=sharing
+
 ##### Comment
 The front end is not dynamic as expected, it should be replaced by React to get a dyanmic table at the left of the page and to avoid the reload of the page after each transaction

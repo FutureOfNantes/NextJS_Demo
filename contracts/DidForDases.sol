@@ -23,7 +23,7 @@ contract DidForDases is Ownable {
 
     uint public maxEntities; // Maximum number of Entities in the list
 
-    event Suivi(string message, address emetteur); //Event to trace the interactions
+    event Trace(string message, address sender); //Event to trace the interactions
 
     //Store the address of the creator of the contract and fill in the array with this address as Admin of Dases
     constructor() {
@@ -52,6 +52,7 @@ contract DidForDases is Ownable {
                 );
             }
         }
+        emit Trace('The address is not existing in the list of Entities', msg.sender);
         _;
     }
 

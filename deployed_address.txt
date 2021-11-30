@@ -1,0 +1,3 @@
+Network used : Rinkeby
+Testnet address for DidForDases.sol (main contract, used by the front end) : '0xb45b95554Aa12A49B70797fff266Df15fcD8BE3D'
+Testnet address for EntitiesNumber.sol : '0x369BD9ECe4B5786208805Bc543CdAC44469741E5'
