@@ -278,14 +278,14 @@ ssAssociation.onclick = async () => {
   console.log(associationName)
   const associationEmail = document.getElementById('ass-email').value;
   console.log(associationEmail)
-  //Clear the values of the form
-  document.getElementById('ass-name').value = '';
-  document.getElementById('ass-email').value = '';
   // Sending the Name and Email into the smart contract associated to the sender address
   var web3 = new Web3(window.ethereum)
   const associate = new web3.eth.Contract(ssABI, ssAddress)
   await associate.methods.idAssociation(associationName, associationEmail).send({ from: ethereum.selectedAddress })
   //Reload of the page to display the new association in the list
+  //Clear the values of the form
+  document.getElementById('ass-name').value = '';
+  document.getElementById('ass-email').value = '';
   location.reload()
 }
 
@@ -297,15 +297,15 @@ ssUpdate.onclick = async () => {
   console.log(updateName)
   const updateEmail = document.getElementById('upd-email').value;
   console.log(updateEmail)
-  //Clear the values of the form
-  document.getElementById('upd-name').value = '';
-  document.getElementById('upd-email').value = '';
   // Sending the Name and Email into the smart contract associated to the sender address for the update
   var web3 = new Web3(window.ethereum)
   const associate = new web3.eth.Contract(ssABI, ssAddress)
 
   await associate.methods.idUpdate(updateName, updateEmail).send({ from: ethereum.selectedAddress })
   //Reload of the page to display the  update in the list
+  //Clear the values of the form
+  document.getElementById('upd-name').value = '';
+  document.getElementById('upd-email').value = '';
   location.reload()
 }
 

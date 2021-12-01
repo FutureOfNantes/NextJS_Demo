@@ -52,7 +52,7 @@ contract DidForDases is Ownable {
                 );
             }
         }
-        emit Trace('The address is not existing in the list of Entities', msg.sender);
+        emit Trace('The address is not existing in the list of Entities and can be added', msg.sender);
         _;
     }
 

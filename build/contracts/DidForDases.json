@@ -15648,15 +15648,34 @@
           ],
           "name": "Suivi",
           "type": "event"
+        },
+        "0xcb1789f2cd8d1345e9c4e9e0f15a5d2a0083c6b7358cbb5e2870a8f875201535": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "Trace",
+          "type": "event"
         }
       },
       "links": {},
-      "address": "0xD1759A878F0fB1f9d19ACBC63a750ac4f1dB2812",
-      "transactionHash": "0x8badb647cb82b55847c5210f85fbbf4700ba291bdcbca3b3b160f0150522bf9a"
+      "address": "0xD4FEb30483F468a8552AEaF8c7cb932857742a41",
+      "transactionHash": "0xfc35a0192801fd85e729fdc74155aaab939fa3befe52a7bc302e35335ef94758"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-30T22:04:17.437Z",
+  "updatedAt": "2021-11-30T23:52:01.353Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Perrin Grandne",
