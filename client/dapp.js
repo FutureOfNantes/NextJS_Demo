@@ -282,11 +282,11 @@ ssAssociation.onclick = async () => {
   var web3 = new Web3(window.ethereum)
   const associate = new web3.eth.Contract(ssABI, ssAddress)
   await associate.methods.idAssociation(associationName, associationEmail).send({ from: ethereum.selectedAddress })
-  //Reload of the page to display the new association in the list
   //Clear the values of the form
   document.getElementById('ass-name').value = '';
   document.getElementById('ass-email').value = '';
-  location.reload()
+  //Reload of the page to display the new association in the list
+  window.location.reload()
 }
 
 //Interaction with button for updating an association in the list of entities
@@ -300,13 +300,12 @@ ssUpdate.onclick = async () => {
   // Sending the Name and Email into the smart contract associated to the sender address for the update
   var web3 = new Web3(window.ethereum)
   const associate = new web3.eth.Contract(ssABI, ssAddress)
-
   await associate.methods.idUpdate(updateName, updateEmail).send({ from: ethereum.selectedAddress })
-  //Reload of the page to display the  update in the list
   //Clear the values of the form
   document.getElementById('upd-name').value = '';
   document.getElementById('upd-email').value = '';
-  location.reload()
+  //Reload of the page to display the new association in the list
+  window.location.reload()
 }
 
 //Interaction with button for address removal into the list
@@ -317,7 +316,7 @@ ssDelete.onclick = async () => {
   const associate = new web3.eth.Contract(ssABI, ssAddress)
   await associate.methods.idDelete().send({ from: ethereum.selectedAddress })
   //Reload of the page to display the  update in the list
-  location.reload()
+  window.location.reload()
 }
 
 //Function to display the list of entities based on the array from the smart contract
