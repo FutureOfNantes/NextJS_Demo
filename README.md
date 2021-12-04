@@ -7,12 +7,13 @@ My final project for Consensys Developer Bootcamp is available on this link : ht
 
 DaSES will be a space for exchange and decentralized storage about data education and skills from a multi-party ecosystem.
 
-In this ecosystem, the contracting between Data Providers and Data Users will be done on the Blockchain with smart contracts.
+In this ecosystem, the contract between Data Providers and Data Users will be done on the Blockchain with smart contracts.
 These entities (Data Provider and Data Users) must be identified on the Blockchain for doing and signing this contract.
 
 This project is an example about "How to associate information with an entity and its address" as a very basic MVP. The term 'DID' is not used correctly because it is not a real DID but just an association between public key and entity name and email contact.
-It is just a small first step to apprehend how the blockchain works.
+it is just a small first step to apprehend how the blockchain works.
 In the long term, we plan to use https://walt.id and its SSI Kit for DID managing.
+You can find the latest version of this project on https://github.com/pgrandne/did_for_dases_v2
 
 ### Directory Structure
 
@@ -24,18 +25,24 @@ The project is deployed on `Rinkeby` Test Network
 MetaMask is requested in your browser. The Network must be localhost if you use it locally or Rinkeby if you use it on the tesnet
 ###### Install nodejs
 Download and install latest node.js from [here](https://nodejs.org/en/download/). 
-Install nodejs by unpacking it and adding to the `PATH`.
+1. Unzip the binary archive to any directory you wanna install Node, I use `/usr/local/lib/nodejs`:
 ```bash
+$ VERSION=v10.15.0
+$ DISTRO=linux-x64
 $ sudo mkdir -p /usr/local/lib/nodejs
-$ sudo tar -xJvf node-v10.16.3-darwin-x64.tar -C /usr/local/lib/nodejs
-$ export PATH=/usr/local/lib/nodejs/node-v10.16.3-darwin-x64/bin:$PATH
+$ sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
 ```
-Note: Make npm and node commands accessible for your user (without sudo). Run 
+
+2. Set the environment variable `~/.profile`, add below to the end
+``` bash
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+```
+3. Refresh profile
 ```bash
-$ mkdir ~/.npm-packages
-$ npm config set prefix ~/.npm-packages
+. ~/.profile
 ```
-Finally, verify the install:
+
+4. Test installation using
 ```bash
 $ node -v
 $ npm version
@@ -49,8 +56,8 @@ Install truffle using npm:
 $ npm install -g truffle
 ```
 You need to create an .env file with 2 variables in the root directory for depoying the smart contract on the testnet:
-* MNEMONIC="PUT-YOUR_SEED_PHRASE"
-* INFURA_URL=PUT_YOUR_INNFURA_RINKEBY_URL
+* MNEMONIC="PUT_YOUR_SEED_PHRASE"
+* INFURA_URL=PUT_YOUR_INFURA_RINKEBY_URL
 
 ### How to run this project locally:
 Locally, we use port: 8545
@@ -80,7 +87,7 @@ $ truffle migrate --network development
 If you want to migrate the contract on the testnet, please replace development by rinkeby
 
 * When the contract is migrated, find the adress of the smart contract in the terminal and copy it
-* Got to client/dapp.js and paste the address into the row 3 const ssAddress ="PAST_HERE"
+* Go to client/dapp.js and paste the address into the row 3 : `const ssAddress ="PAST_HERE"`
 
 It is recommanded to use Liver Server (extension of Visual Studio Code) as a development local Server
 
@@ -127,4 +134,4 @@ All tests should be passed with no error
 https://drive.google.com/drive/folders/1a8g4u8rhoUnHhU8CyNydKDtTsuLiBkXT?usp=sharing
 
 ##### Comment
-The front end is not dynamic as expected, it should be replaced by React to get a dyanmic table at the left of the page and to avoid the reload of the page after each transaction
+The front end is not dynamic as expected, it should be replaced by React to get a dyanmic table at the left of the page and to avoid the reload of the page after each transaction; TI will be done in the v2 : https://github.com/pgrandne/did_for_dases_v2
