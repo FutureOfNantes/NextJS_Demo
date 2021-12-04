@@ -24,22 +24,19 @@ The project is deployed on `Rinkeby` Test Network
 ##### Prerequisites
 MetaMask is requested in your browser. The Network must be localhost if you use it locally or Rinkeby if you use it on the tesnet
 ###### Install nodejs
-Download and install latest node.js from [here](https://nodejs.org/en/download/). 
-1. Unzip the binary archive to any directory you wanna install Node, I use `/usr/local/lib/nodejs`:
+1. Install cURL if you don't have it:
 ```bash
-$ VERSION=v10.15.0
-$ DISTRO=linux-x64
-$ sudo mkdir -p /usr/local/lib/nodejs
-$ sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
+sudo apt install curl
 ```
 
-2. Set the environment variable `~/.profile`, add below to the end
+2. Create APT sources list for Nodesource Nodejs 16 repo:
 ``` bash
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+cd ~
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 ```
-3. Refresh profile
-```bash
-. ~/.profile
+3. Install Nodejs 16
+``` bash
+sudo apt -y install nodejs
 ```
 
 4. Test installation using
