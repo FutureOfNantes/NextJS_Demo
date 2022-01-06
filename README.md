@@ -13,7 +13,7 @@ These entities (Data Provider and Data Users) must be identified on the Blockcha
 This project is an example about "How to associate information with an entity and its address" as a very basic MVP. The term 'DID' is not used correctly because it is not a real DID but just an association between public key and entity name and email contact.
 it is just a small first step to apprehend how the blockchain works.
 In the long term, we plan to use https://walt.id and its SSI Kit for DID managing.
-You can find the latest version of this project on https://github.com/pgrandne/did_for_dases_v2
+You can find the latest version of this project on https://github.com/pgrandne/dases_proto
 
 ### Directory Structure
 
@@ -131,4 +131,4 @@ All tests should be passed with no error
 https://drive.google.com/drive/folders/1a8g4u8rhoUnHhU8CyNydKDtTsuLiBkXT?usp=sharing
 
 ##### Comment
-The front end is not dynamic as expected, it should be replaced by React to get a dyanmic table at the left of the page and to avoid the reload of the page after each transaction; TI will be done in the v2 : https://github.com/pgrandne/did_for_dases_v2
+The front end is not dynamic as expected, it should be replaced by React to get a dynamic table at the left of the page and to avoid the reload of the page after each transaction. It will be done in the new version : https://github.com/pgrandne/dases_proto
